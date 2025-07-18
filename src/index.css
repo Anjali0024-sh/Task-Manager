@@ -1,0 +1,193 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #333;
+  padding: 20px;
+}
+.signupForm, .task-form form {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.signupForm h2 { 
+text-align: center; margin-bottom: 25px; font-size: 26px; color: #667eea; 
+}
+form { 
+ display: flex; flex-direction: column; gap: 20px;
+}
+input, textarea {
+  padding: 12px;
+  border: 2px solid #e0e7ff;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+input:focus, textarea:focus {
+  outline: none; border-color: #667eea;
+}
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transition: 0.3s;
+}
+button:hover {
+  transform: translateY(-2px); 
+}
+.task-manager {
+  max-width: 1200px; margin: 0 auto; 
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.header h2 {
+  font-size: 28px; color: #667eea; 
+}
+.header button {
+  background: linear-gradient(135deg, #ef4444, #dc2626); 
+}
+.toggle-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
+.task-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+}
+.pending {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  border-left: 4px solid #ef4444;
+  padding: 20px;
+  border-radius: 12px;
+}
+.completed {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border-left: 4px solid #22c55e;
+  padding: 20px;
+  border-radius: 12px;
+}
+.pending h3 {
+  color: #dc2626; font-size: 22px; margin-bottom: 15px; 
+}
+.completed h3 {
+  color: #16a34a; font-size: 22px; margin-bottom: 15px; 
+}
+.task-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  border-top: 3px solid #667eea;
+}
+.pending .task-card {
+  border-top-color: #ef4444; 
+}
+.completed .task-card {
+  border-top-color: #22c55e; background: #f0fdf4;
+}
+.task-card:hover {
+  transform: translateY(-3px); 
+}
+.task-card h4 {
+  font-size: 16px; margin-bottom: 8px; 
+}
+.task-card p {
+  color: #666; margin-bottom: 12px; 
+}
+.task-card button {
+  font-size: 12px;
+  padding: 6px 12px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.task-card button:nth-of-type(1) {
+  background: #3b82f6; 
+}
+.task-card button:nth-of-type(2) {
+  background: #22c55e; 
+}
+.task-card button:nth-of-type(3) {
+  background: #ef4444; 
+}
+.completed .task-card h4 {
+  text-decoration: line-through; color: #16a34a; 
+}
+.task-form {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+textarea {
+  min-height: 80px; 
+}
+.add-task {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.add-task:hover{
+  transform: scale(1.1); 
+}
+@media(max-width: 768px){
+  .task-sections {
+grid-template-columns: 1fr; 
+}
+  .header{
+flex-direction: column; gap: 12px; 
+}
+  .task-card button{
+width: 100%; margin-bottom: 6px; 
+}
+}
